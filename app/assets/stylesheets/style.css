@@ -1,0 +1,29 @@
+
+header {
+  height: 70px;
+  background-color: antiquewhite;
+  display: flex;
+  padding: 0 auto;
+  align-items: center;
+}
+.title{
+  font-weight: bold;
+  font-size: 30px;
+}
+.heading{
+  width: 50%;
+  margin-left: 30px;
+}
+.navbar {
+  width: 50%;
+}
+.nav-lists {
+  font-size: 15px;
+  font-weight: bold;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+li {
+  list-style: none;
+}
