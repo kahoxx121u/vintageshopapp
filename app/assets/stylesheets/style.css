@@ -1,7 +1,7 @@
 
 header {
   height: 70px;
-  background-color: antiquewhite;
+  background-color: grey;
   display: flex;
   padding: 0 auto;
   align-items: center;
@@ -26,4 +26,35 @@ header {
 }
 li {
   list-style: none;
+}
+.first-view{
+  height: 400px;
+}
+.heading-name {
+  text-align: center;
+  border-bottom: 1px solid red;
+  width: 200px;
+  margin: 40px auto;
+}
+.messages {
+  width: 50vw;
+  margin: 0 auto;
+}
+.message {
+  display: flex;
+  font-size: 18px;
+  margin: 0 0 16px 70px;
+}
+.message-date {
+  padding-right: 40px;
+}
+.middle-content{
+  height: 500px;
+}
+
+footer {
+  height: 50px;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: gray;
 }

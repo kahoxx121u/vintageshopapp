@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../../assets/stylesheets/reset.css">
   <title> Easters Bro. </title>
 </head>
+
 <body>
 <!-- header -->
 <header>
@@ -17,12 +18,90 @@
     <li>About</li>
     <li>Blog</li>
     <li>Instagram</li>
-    <li>Login</li>
     <li>contact</li>
     </ul>
   </div>
 </header>
 <!-- header -->
+<div class="contents">
+      
+      <!-- 『トップ画像』を表示する -->
+      <div class="first-view">
+         <img src="../../assets/images/main.png" alt="画像です">
+      </div>
+      <!-- 『トップ画像』を表示する -->
+
+      <!-- 『お知らせ』を表示する -->
+      <div class="upper-content">
+      <h2 class="heading-name">新着情報</h2>
+        <ul class="messages">
+          <li class="message">
+            <div class="message-date">2019/10/06</div>
+            <div>【新規のお客さま限定】<b>10％OFF</b>キャンペーン</div>
+          </li>
+          <li class="message">
+            <div class="message-date">2019/10/03</div>
+            <div>うれしい<b>ポイントアップキャンペーン</b></div>
+          </li>
+          <li class="message">
+            <div class="message-date">2019/09/27</div>
+            <div>2020年成人式 ご予約承ります</div>
+          </li>
+          <li class="message">
+            <div class="message-date">2018/10/03</div>
+            <div>うれしい<b>ポイントアップキャンペーン</b></div>
+          </li>
+          <li class="message">
+            <div class="message-date">2018/09/27</div>
+            <div>2019年成人式 ご予約承ります</div>
+          </li>
+        </ul>
+      </div>
+      <!-- 『お知らせ』を表示する -->
+
+      <!-- 『New Item』を表示する -->
+      <div class="middle-content">  
+      <h2 class="heading-name">New Item</h2>
+      
+       <ul class='item-lists'>
+      <% @items.each do |item| %>
+      <li class='list'>
+        <%= link_to item_path(item) do %>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: "item-img" if item.image.attached? %>
+       <%# 商品が売れていればsold outを表示 %>
+          <% if item.order != nil %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+       <% end %>
+       </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.item_name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= item.price %>円<br><%= item.delivery_charge.delivery_charge %></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+          </li>
+        </ul>
+      </div>
+      <!-- 『New Item』を表示する -->
+
+<!-- footer -->
+<footer>
+      <p>Copyright(C) Easters Bro. ALL RIGHTS RESERVED.</p>
+    </footer>
+</footer>
+<!-- footer -->
 
 </body>
 </html>
